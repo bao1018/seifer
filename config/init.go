@@ -23,6 +23,7 @@ var configuration Configuration
 
 // Load loads Configuration
 func Load() {
+	// what's err
 	file, err := os.Open("config.json")
 	if err != nil {
 		panic(err)

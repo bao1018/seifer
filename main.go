@@ -2,8 +2,13 @@ package main
 
 import (
 	"fmt"
-	"net/http"
 
+	"bitbucket.org/kyicy/seifer/app/model"
+
+	"bitbucket.org/kyicy/seifer/app"
+
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 
@@ -15,6 +20,13 @@ func main() {
 
 	conf := config.Get()
 
+	db, err := gorm.Open("postgres", conf.Database.Connection)
+	if err != nil {
+		panic("failed to connect database")
+	}
+	defer db.Close()
+	model.Init(db)
+
 	// Echo instance
 	e := echo.New()
 
@@ -22,14 +34,8 @@ func main() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
-	// Routes
-	e.GET("/", hello)
+	app.RegisterRoute(e)
 
 	// Start server
 	e.Logger.Fatal(e.Start(fmt.Sprintf("%v:%v", conf.Addr, conf.Port)))
-}
-
-// Handler
-func hello(c echo.Context) error {
-	return c.String(http.StatusOK, "Hello, my World !!!")
 }
