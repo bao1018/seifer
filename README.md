@@ -1,5 +1,7 @@
 # Seifer 
 
+Golang User Story Recommendation/Query Engine
+
 Related repos:
 > https://github.com/bao1018/gpt-2-master
 
