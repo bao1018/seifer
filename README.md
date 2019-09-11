@@ -8,6 +8,9 @@ Related repos:
 
 1. Create a DB called selfile in Postgres
 2. Run the DDL SQL to create the DB table
+```
+/migration/000001_create_story_table.up.sql
+```
 3. Add `config.json` in root directory with below reference
 ```json
 {
