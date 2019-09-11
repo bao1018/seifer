@@ -3,6 +3,10 @@
 Related repos:
 > https://github.com/bao1018/gpt-2-master
 
+## Overall Tech Arch Diagram
+
+![Image of Arch Design](https://i.imgur.com/I1Y3GiG.png)
+
 ### Install
 > Golang 1.12 and make go_mod be ON
 
