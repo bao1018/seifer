@@ -1,7 +1,10 @@
 # Seifer 
 
+Related repos:
+> https://github.com/bao1018/gpt-2-master
+
 ### Install
-> Golang 1.12 and mkae go_mod be ON
+> Golang 1.12 and make go_mod be ON
 
 1. Create a DB called selfile in Postgres
 2. Run the DDL SQL to create the DB table
