@@ -32,5 +32,19 @@ Related repos:
 go run main.go
 ```
 
+5. Test the API
+Try below to test the API
+```
+curl -X POST \
+http://localhost:2333/user_story/similar \
+-H 'Accept: */*' \
+-H 'Content-Length: 377' \
+-H 'Content-Type: application/json' \
+-d '{
+"title":"Lockbox / Receipt",
+"body":" As a ClientABC Employee"
+}'
+```
+
 
 
